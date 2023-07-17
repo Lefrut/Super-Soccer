@@ -23,8 +23,8 @@ fun SuperSoccerTheme(
             val wic = WindowInsetsControllerCompat(window, window.decorView)
             window.statusBarColor = colorScheme.surface.toArgb()
             window.navigationBarColor = colorScheme.surface.toArgb()
-            wic.isAppearanceLightStatusBars = !darkTheme
-            wic.isAppearanceLightNavigationBars = !darkTheme
+            wic.isAppearanceLightStatusBars = darkTheme
+            wic.isAppearanceLightNavigationBars = darkTheme
         }
     }
     CompositionLocalProvider(

@@ -13,6 +13,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.dashkevich.ui.theme.CustomTheme
+import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(onNavigateOperation: () -> Unit) {
@@ -31,7 +32,8 @@ fun SplashScreen(onNavigateOperation: () -> Unit) {
         )
     }
     LaunchedEffect(Unit){
-
+        delay(1000)
+        onNavigateOperation()
     }
 
 }

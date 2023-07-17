@@ -16,3 +16,4 @@ rootProject.name = "Super soccer"
 include ':app'
 include ':features:splash'
 include ':core:ui'
+include ':core:navigation'
