@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.dashkevich.super_soccer.navigation.AppNavigation
-import com.dashkevich.super_soccer.ui.theme.SuperSoccerTheme
+import com.dashkevich.ui.theme.SuperSoccerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

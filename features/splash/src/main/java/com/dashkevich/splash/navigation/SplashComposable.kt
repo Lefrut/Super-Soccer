@@ -1,17 +1,16 @@
 package com.dashkevich.splash.navigation
 
-import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.dashkevich.splash.SplashScreen
 
 const val SPLASH = "splash"
 
-fun NavGraphBuilder.splashComposable(){
+inline fun NavGraphBuilder.splashComposable(crossinline onNavigationOperation: () -> Unit){
     composable(SPLASH){
         //viewModel
         //State
         //Events
-        SplashScreen()
+        SplashScreen(onNavigateOperation = { onNavigationOperation() })
     }
 }
