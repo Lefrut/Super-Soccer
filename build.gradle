@@ -1,6 +1,7 @@
 buildscript {
     ext {
         compose_version = '1.4.7'
+        navigation_compose_version = "2.6.0"
     }
 }
 plugins {
