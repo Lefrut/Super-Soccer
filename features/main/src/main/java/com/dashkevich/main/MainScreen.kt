@@ -16,7 +16,7 @@ import com.dashkevich.ui.R
 import com.dashkevich.ui.theme.CustomTheme
 
 @Composable
-fun MainScreen(viewState: MainState, onLeagueClick: (Int) -> Unit, onNavigate: () -> Unit) {
+fun MainScreen(viewState: MainState, onLeagueClick: (Int) -> Unit, onNavigate: (Int) -> Unit) {
     Scaffold(
         topBar = { MainHeader(headerText = stringResource(R.string.Available_leagues)) },
         containerColor = CustomTheme.colors.surface
@@ -31,8 +31,7 @@ fun MainScreen(viewState: MainState, onLeagueClick: (Int) -> Unit, onNavigate: (
     LaunchedEffect(nav){
         when(nav){
             is MainNavigation.NavigateToSchedule -> {
-
-                onNavigate()
+                onNavigate(nav.leagueId)
             }
             MainNavigation.None -> {}
         }

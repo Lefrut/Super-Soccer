@@ -9,6 +9,6 @@ fun NavController.navigateToMain() {
     }
 }
 
-fun NavController.navigateToSchedule() {
-    navigate(SCHEDULE)
+fun NavController.navigateToSchedule(leagueId: Int) {
+    navigate("$SCHEDULE/$leagueId")
 }

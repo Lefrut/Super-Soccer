@@ -25,8 +25,8 @@ fun NavGraphBuilder.mainComposable(navController: NavController) {
             onLeagueClick = { idLeague ->
                 mainViewModel.navigateToSchedule(idLeague)
             },
-            onNavigate = {
-                navController.navigateToSchedule()
+            onNavigate = { leagueId ->
+                navController.navigateToSchedule(leagueId)
                 mainViewModel.leaveScreen()
             }
         )
