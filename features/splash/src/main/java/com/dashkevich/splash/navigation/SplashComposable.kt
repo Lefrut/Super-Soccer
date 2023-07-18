@@ -12,6 +12,6 @@ fun NavGraphBuilder.splashComposable(navController: NavController) {
         //viewModel
         //State
         //Events
-        SplashScreen(onNavigateOperation = { navController.navigateToMain { popUpTo(SPLASH) } })
+        SplashScreen(onNavigateOperation = { navController.navigateToMain() })
     }
 }

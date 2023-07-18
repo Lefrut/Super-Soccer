@@ -1,5 +1,7 @@
 package com.dashkevich.main.components
 
+import android.util.Log
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,38 +22,43 @@ private val fourDp = 4.dp
 private const val two = 2
 
 @Composable
-fun LeaguesCard(modifier: Modifier = Modifier, leagueUI: League) {
+fun LeaguesCard(modifier: Modifier = Modifier, league: League, onLeagueClick: (Int) -> Unit) {
     Card(
         modifier = modifier
             .padding(horizontal = 14.dp)
             .fillMaxWidth()
-            .height(140.dp),
+            .height(140.dp)
+            .clickable {
+                onLeagueClick(league.leagueId)
+            },
         colors = CardDefaults.cardColors(containerColor = CustomTheme.colors.primary),
         shape = RoundedCornerShape(CustomTheme.shapes.default),
         elevation = CardDefaults.cardElevation(fourDp, fourDp, fourDp, fourDp, fourDp, fourDp),
     ) {
-        LeaguesCardContent(leagueUI = leagueUI)
+        LeaguesCardContent(league = league)
     }
 }
 
 @Composable
-fun LeaguesCardContent(modifier: Modifier = Modifier, leagueUI: League) {
+fun LeaguesCardContent(modifier: Modifier = Modifier, league: League) {
     val imageModifier = Modifier
         .padding(start = 10.dp)
         .size(50.dp)
         .clip(CircleShape)
-    Row(modifier = modifier.padding(end = 10.dp).fillMaxSize()) {
+    Row(modifier = modifier
+        .padding(end = 10.dp)
+        .fillMaxSize()) {
         Column(verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxHeight()) {
             AsyncImage(
                 modifier = imageModifier,
-                model = leagueUI.leagueLogo, contentDescription = null,
+                model = league.leagueLogo, contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.CenterStart
             )
             Spacer(modifier = Modifier.height(3.dp))
             AsyncImage(
                 modifier = imageModifier,
-                model = leagueUI.countryLogo, contentDescription = null,
+                model = league.countryLogo, contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.CenterStart
             )
@@ -63,14 +70,14 @@ fun LeaguesCardContent(modifier: Modifier = Modifier, leagueUI: League) {
                 .fillMaxHeight()
         ) {
             Text(
-                text = leagueUI.leagueName,
+                text = league.leagueName,
                 color = CustomTheme.colors.onSurfaceVariant,
                 style = CustomTheme.fonts.headline3,
                 maxLines = two
             )
             Spacer(modifier = Modifier.height(3.dp))
             Text(
-                text = leagueUI.countryName,
+                text = league.countryName,
                 color = CustomTheme.colors.onSurfaceVariant,
                 style = CustomTheme.fonts.headline5,
                 maxLines = two

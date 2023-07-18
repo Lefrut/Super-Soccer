@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import com.dashkevich.main.MainScreen
 import com.dashkevich.main.MainViewModel
 import com.dashkevich.navigation.MAIN
+import com.dashkevich.navigation.navigateToSchedule
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -19,6 +20,15 @@ fun NavGraphBuilder.mainComposable(navController: NavController) {
         val componentActivity = (LocalContext.current as ComponentActivity)
         val mainViewModel: MainViewModel by componentActivity.viewModel<MainViewModel>()
         val viewState = mainViewModel.viewState.collectAsState().value
-        MainScreen(viewState)
+        MainScreen(
+            viewState = viewState,
+            onLeagueClick = { idLeague ->
+                mainViewModel.navigateToSchedule(idLeague)
+            },
+            onNavigate = {
+                navController.navigateToSchedule()
+                mainViewModel.leaveScreen()
+            }
+        )
     }
 }
