@@ -40,6 +40,12 @@ dependencies {
 
     implementation project(':core:ui')
     implementation project(':core:navigation')
+    implementation project(':domain')
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koinAndroid_version"
+    //Async
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
 
     implementation("io.coil-kt:coil-compose:$coil_version")
     implementation 'androidx.activity:activity-compose:1.7.2'
