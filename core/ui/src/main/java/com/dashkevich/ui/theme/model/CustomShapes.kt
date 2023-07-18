@@ -1,3 +1,8 @@
 package com.dashkevich.ui.theme.model
 
-class CustomShapes()
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+
+class CustomShapes(
+    val default: Dp =  26.dp
+)
