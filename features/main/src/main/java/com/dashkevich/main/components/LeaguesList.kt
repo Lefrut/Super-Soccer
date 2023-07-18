@@ -8,14 +8,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.dashkevich.main.util.dataLeaguesUI
+import com.dashkevich.domain.model.League
 
 private val spaceHeight = 10.dp
 
 @Composable
-fun LeaguesList(modifier: Modifier = Modifier) {
+fun LeaguesList(modifier: Modifier = Modifier, leagues: List<League>) {
     LazyColumn(modifier = modifier.fillMaxSize()) {
-        items(dataLeaguesUI) { league ->
+        items(leagues) { league ->
             Spacer(modifier = Modifier.height(14.dp))
             LeaguesCard(leagueUI = league)
         }

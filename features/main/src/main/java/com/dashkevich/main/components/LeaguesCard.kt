@@ -13,16 +13,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.dashkevich.main.model.LeagueUI
+import com.dashkevich.domain.model.League
 import com.dashkevich.ui.theme.CustomTheme
 
 private val fourDp = 4.dp
 private const val two = 2
 
 @Composable
-fun LeaguesCard(modifier: Modifier = Modifier, leagueUI: LeagueUI) {
+fun LeaguesCard(modifier: Modifier = Modifier, leagueUI: League) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .padding(horizontal = 14.dp)
             .fillMaxWidth()
             .height(140.dp),
@@ -35,23 +35,23 @@ fun LeaguesCard(modifier: Modifier = Modifier, leagueUI: LeagueUI) {
 }
 
 @Composable
-fun LeaguesCardContent(modifier: Modifier = Modifier, leagueUI: LeagueUI) {
+fun LeaguesCardContent(modifier: Modifier = Modifier, leagueUI: League) {
     val imageModifier = Modifier
         .padding(start = 10.dp)
         .size(50.dp)
         .clip(CircleShape)
-    Box(modifier = modifier.padding(end = 10.dp).fillMaxSize()) {
+    Row(modifier = modifier.padding(end = 10.dp).fillMaxSize()) {
         Column(verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxHeight()) {
             AsyncImage(
                 modifier = imageModifier,
-                model = leagueUI.logo, contentDescription = null,
+                model = leagueUI.leagueLogo, contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.CenterStart
             )
             Spacer(modifier = Modifier.height(3.dp))
             AsyncImage(
                 modifier = imageModifier,
-                model = leagueUI.countyLogo, contentDescription = null,
+                model = leagueUI.countryLogo, contentDescription = null,
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.CenterStart
             )
@@ -59,11 +59,11 @@ fun LeaguesCardContent(modifier: Modifier = Modifier, leagueUI: LeagueUI) {
         Column(
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
+                .padding(10.dp)
                 .fillMaxHeight()
-                .align(Alignment.Center)
         ) {
             Text(
-                text = leagueUI.name,
+                text = leagueUI.leagueName,
                 color = CustomTheme.colors.onSurfaceVariant,
                 style = CustomTheme.fonts.headline3,
                 maxLines = two

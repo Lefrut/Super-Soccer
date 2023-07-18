@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.dashkevich.main'
+    namespace 'com.dashkevich.util'
     compileSdk 34
 
     defaultConfig {
@@ -28,35 +28,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.4.7'
-    }
 }
 
 dependencies {
-    implementation project(':core:util')
-    implementation project(':core:ui')
-    implementation project(':core:navigation')
-    implementation project(':domain')
-
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koinAndroid_version"
-    //Async
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
-
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-
-    implementation("io.coil-kt:coil-compose:$coil_version")
-    implementation 'androidx.activity:activity-compose:1.7.2'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.compose.material3:material3:1.2.0-alpha03'
-    implementation "androidx.navigation:navigation-compose:$navigation_compose_version"
-
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
