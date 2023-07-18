@@ -1,3 +1,7 @@
 package com.dashkevich.ui.theme.model
 
-class CustomTypography()
+import androidx.compose.ui.text.TextStyle
+
+class CustomTypography(
+    val header: TextStyle
+)

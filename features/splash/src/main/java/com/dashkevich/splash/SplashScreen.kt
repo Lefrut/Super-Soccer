@@ -28,10 +28,9 @@ fun SplashScreen(onNavigateOperation: () -> Unit) {
             painter = painterResource(id = R.drawable.ball),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            alignment = Alignment.Center,
         )
     }
-    LaunchedEffect(Unit){
+    LaunchedEffect(Unit) {
         delay(1000)
         onNavigateOperation()
     }
