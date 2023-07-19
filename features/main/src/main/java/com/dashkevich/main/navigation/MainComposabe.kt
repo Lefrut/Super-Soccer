@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import com.dashkevich.main.MainScreen
 import com.dashkevich.main.MainViewModel
 import com.dashkevich.navigation.MAIN
+import com.dashkevich.navigation.navigateToInternet
 import com.dashkevich.navigation.navigateToSchedule
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -30,6 +31,9 @@ fun NavGraphBuilder.mainComposable(navController: NavController) {
             onButtonClick = {
                 mainViewModel.loadLastLeagues()
 
+            },
+            onNavigateToInternet = {
+                navController.navigateToInternet()
             }
         )
     }

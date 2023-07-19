@@ -18,10 +18,15 @@ fun MainScreen(
     viewState: MainState,
     onLeagueClick: (Long) -> Unit,
     onNavigate: (Long) -> Unit,
-    onButtonClick: () -> Unit
+    onButtonClick: () -> Unit,
+    onNavigateToInternet: () -> Unit
 ) {
     Scaffold(
-        topBar = { MainHeader(headerText = stringResource(R.string.Available_leagues)) },
+        topBar = {
+            MainHeader(headerText = stringResource(R.string.Available_leagues), onIconClick = {
+                onNavigateToInternet()
+            })
+        },
         containerColor = CustomTheme.colors.surface
     ) { paddings ->
         MainContent(
@@ -32,8 +37,8 @@ fun MainScreen(
         )
     }
     val nav = viewState.navigation
-    LaunchedEffect(nav){
-        when(nav){
+    LaunchedEffect(nav) {
+        when (nav) {
             is MainNavigation.NavigateToSchedule -> {
                 onNavigate(nav.leagueId)
             }
