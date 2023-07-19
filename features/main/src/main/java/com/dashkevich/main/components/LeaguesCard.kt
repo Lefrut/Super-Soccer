@@ -1,5 +1,6 @@
 package com.dashkevich.main.components
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -21,14 +22,14 @@ private val fourDp = 4.dp
 private const val two = 2
 
 @Composable
-fun LeaguesCard(modifier: Modifier = Modifier, league: League, onLeagueClick: (Long) -> Unit) {
+fun LeaguesCard(modifier: Modifier = Modifier, league: League, onLeagueClick: (Int) -> Unit) {
     Card(
         modifier = modifier
             .padding(horizontal = 14.dp)
             .fillMaxWidth()
             .height(140.dp)
             .clickable {
-                onLeagueClick(league.leagueId.toLong())
+                onLeagueClick(league.leagueId)
             },
         colors = CardDefaults.cardColors(containerColor = CustomTheme.colors.primary),
         shape = RoundedCornerShape(CustomTheme.shapes.default),

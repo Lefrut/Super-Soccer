@@ -11,5 +11,5 @@ data class MainState(
 
 sealed class MainNavigation{
     object None: MainNavigation()
-    class NavigateToSchedule(val leagueId: Long): MainNavigation()
+    class NavigateToSchedule(val leagueId: Int): MainNavigation()
 }
