@@ -1,14 +1,11 @@
 package com.dashkevich.data.repository
 
-import android.util.Log
 import com.dashkevich.data.api.ApiSoccer
-import com.dashkevich.data.api.model.ResultTopSoccer
 import com.dashkevich.data.util.leagueMapper
 import com.dashkevich.data.util.topSoccerMapper
 import com.dashkevich.domain.model.League
 import com.dashkevich.domain.model.TopSoccer
 import com.dashkevich.domain.repository.ApiRepository
-import kotlinx.coroutines.*
 
 internal class ApiRepositoryImpl(private val api: ApiSoccer) : ApiRepository {
 

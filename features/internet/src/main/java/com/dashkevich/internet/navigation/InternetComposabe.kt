@@ -1,8 +1,5 @@
 package com.dashkevich.internet.navigation
 
-import android.app.Activity
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable

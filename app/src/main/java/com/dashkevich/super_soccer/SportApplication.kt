@@ -1,8 +1,6 @@
 package com.dashkevich.super_soccer
 
 import android.app.Application
-import com.dashkevich.data.di.dataModules
-import com.dashkevich.domain.di.domainModules
 import com.dashkevich.super_soccer.di.appModule
 import com.onesignal.OneSignal
 import org.koin.android.ext.koin.androidContext

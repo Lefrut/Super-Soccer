@@ -3,10 +3,10 @@ package com.dashkevich.main
 import androidx.lifecycle.viewModelScope
 import com.dashkevich.domain.use_case.LoadLastLeaguesUseCase
 import com.dashkevich.domain.use_case.LoadLeaguesUseCase
-import com.dashkevich.main.model.MainState
 import com.dashkevich.main.model.MainNavigation
-import com.dashkevich.util.common.BaseViewModel
+import com.dashkevich.main.model.MainState
 import com.dashkevich.ui.util.OperationState
+import com.dashkevich.util.common.BaseViewModel
 import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.launch
 

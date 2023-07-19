@@ -8,7 +8,6 @@ import com.dashkevich.util.common.BaseViewModel
 import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ScheduleViewModel(private val loadTopSoccerUseCase: LoadTopSoccerUseCase) :

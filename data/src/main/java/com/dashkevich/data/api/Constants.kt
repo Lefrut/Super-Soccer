@@ -1,7 +1,5 @@
 package com.dashkevich.data.api
 
-import com.dashkevich.data.api.model.ResponseLeagues
-
 internal const val BASE_URL = "https://apiv2.allsportsapi.com/football/"
 
 internal const val PARAM_MET = "met"
