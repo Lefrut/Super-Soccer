@@ -11,13 +11,13 @@ import com.dashkevich.ui.R
 import com.dashkevich.ui.theme.CustomTheme
 
 @Composable
-fun Error() {
+fun Error(str: String) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
-            text = stringResource(R.string.Error),
+            text = str,
             color = CustomTheme.colors.highlighting,
             style = CustomTheme.fonts.headline3,
-            maxLines = 1
+            maxLines = 10
         )
     }
 }

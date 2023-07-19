@@ -1,10 +1,8 @@
 package com.dashkevich.main.navigation
 
-import android.app.Activity
 import androidx.activity.ComponentActivity
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -28,6 +26,10 @@ fun NavGraphBuilder.mainComposable(navController: NavController) {
             onNavigate = { leagueId ->
                 navController.navigateToSchedule(leagueId)
                 mainViewModel.leaveScreen()
+            },
+            onButtonClick = {
+                mainViewModel.loadLastLeagues()
+
             }
         )
     }

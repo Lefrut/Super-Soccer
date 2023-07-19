@@ -1,6 +1,7 @@
 package com.dashkevich.main
 
 import androidx.lifecycle.viewModelScope
+import com.dashkevich.domain.use_case.LoadLastLeaguesUseCase
 import com.dashkevich.domain.use_case.LoadLeaguesUseCase
 import com.dashkevich.main.model.MainState
 import com.dashkevich.main.model.MainNavigation
@@ -10,7 +11,8 @@ import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.launch
 
 class MainViewModel(
-    private val loadLeaguesUseCase: LoadLeaguesUseCase
+    private val loadLeaguesUseCase: LoadLeaguesUseCase,
+    private val loadLastLeaguesUseCase: LoadLastLeaguesUseCase
 ) : BaseViewModel<MainState>() {
     override fun setModel(): MainState = MainState()
 
@@ -18,7 +20,7 @@ class MainViewModel(
         loadLeagues()
     }
 
-    fun navigateToSchedule(idLeague: Int) {
+    fun navigateToSchedule(idLeague: Long) {
         setState {
             copy(navigation = MainNavigation.NavigateToSchedule(idLeague))
         }
@@ -50,6 +52,27 @@ class MainViewModel(
                     copy(leaguesState = OperationState.Error)
                 }
             }
+        )
+    }
+
+    fun loadLastLeagues() = viewModelScope.launch {
+        loadLastLeaguesUseCase().resultHandler(
+            onSuccess = { leagues ->
+                setState {
+                    copy(leagues = leagues, leaguesState = OperationState.Success)
+                }
+            },
+            onEmptyResult = {
+                setState {
+                    copy(leaguesState = OperationState.EmptyResult)
+                }
+            },
+            onError = {
+                setState {
+                    copy(leaguesState = OperationState.Error)
+                }
+            }
+
         )
     }
 
