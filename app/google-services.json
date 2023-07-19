@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414099661403",
+    "project_id": "sportapp-1ee48",
+    "storage_bucket": "sportapp-1ee48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414099661403:android:03435758e93c875e9c157e",
+        "android_client_info": {
+          "package_name": "com.dashkevich.super_soccer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414099661403-4lsh6sbvfjv12a26j12e148h2jjum02m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-uFKCIBqBYDfz94LOK3XwDlGgaVQ9Jbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414099661403-4lsh6sbvfjv12a26j12e148h2jjum02m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

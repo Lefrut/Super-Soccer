@@ -13,7 +13,7 @@ import com.dashkevich.domain.model.League
 private val spaceHeight = 10.dp
 
 @Composable
-fun LeaguesList(modifier: Modifier = Modifier, leagues: List<League>, onLeagueClick: (Int) -> Unit) {
+fun LeaguesList(modifier: Modifier = Modifier, leagues: List<League>, onLeagueClick: (Long) -> Unit) {
     LazyColumn(modifier = modifier.fillMaxSize()) {
         items(leagues) { league ->
             Spacer(modifier = Modifier.height(14.dp))

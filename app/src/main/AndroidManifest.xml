@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".SportApplication"
@@ -14,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperSoccer"
+        android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
             android:name=".MainActivity"
@@ -29,6 +31,26 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name="com.onesignal.NotificationOpenedActivityHMS"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <receiver
+            android:name="com.onesignal.BootUpReceiver"
+            android:exported="true"
+            tools:replace="android:exported"
+            tools:ignore="ExportedReceiver" />
+        <receiver
+            android:name="com.onesignal.UpgradeReceiver"
+            android:exported="true"
+            android:permission="TODO"
+            tools:replace="android:exported"
+            tools:ignore="ExportedReceiver" />
+        <receiver
+            android:name="com.onesignal.FCMBroadcastReceiver"
+            android:exported="false"
+            tools:replace="android:exported"
+            tools:ignore="MissingClass" />
     </application>
 
 </manifest>
