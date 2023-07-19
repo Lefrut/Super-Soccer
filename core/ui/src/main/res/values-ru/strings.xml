@@ -3,11 +3,4 @@
     <string name="Available_leagues">Доступные лиги</string>
     <string name="Error">Ошибка</string>
     <string name="Empty_result">Не нашлось подходящих данных</string>
-    <string name="id_league">Введите id лиги</string>
-    <string name="server_error">Сервер выдает null, хотя передается правильный id лиги. Можно написать 1, 4 и т.д. - рабочие варианты</string>
-    <string name="topsoccer">Найти лучших игроков</string>
-    <string name="soccer_name">Имя: </string>
-    <string name="soccer_goals">Количество голов: </string>
-    <string name="soccer_team_name">Название команды: </string>
-    <string name="load_data_last">Загрузить последние данные</string>
 </resources>

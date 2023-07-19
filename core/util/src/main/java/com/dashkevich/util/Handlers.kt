@@ -5,11 +5,11 @@ import kotlinx.coroutines.withContext
 
 fun <T> Result<T>.resultHandler(
     onSuccess: (T) -> Unit,
-    onError: (Throwable) -> Unit,
+    onError: (String) -> Unit,
     onEmptyResult: () -> Unit,
 ) {
     onFailure {
-        onError(it)
+        onError(it.message.toString())
     }
     onSuccess {
         when (it) {
